@@ -1,4 +1,4 @@
-package dev.kkkkkksssssaaaa.springroadmap.controller;
+package dev.kkkkkksssssaaaa.springroadmap.hello.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
