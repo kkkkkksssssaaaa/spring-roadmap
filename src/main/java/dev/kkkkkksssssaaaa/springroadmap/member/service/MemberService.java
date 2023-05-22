@@ -26,6 +26,10 @@ public class MemberService {
         return repository.findAll();
     }
 
+    public Optional<Member> findOne(Long memberId) {
+        return repository.findById(memberId);
+    }
+
     private void validateDuplicateMember(Member member) {
         repository
             .findByName(member.getName())
