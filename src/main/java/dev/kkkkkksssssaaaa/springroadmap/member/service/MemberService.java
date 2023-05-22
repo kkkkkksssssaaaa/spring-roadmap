@@ -4,6 +4,9 @@ import dev.kkkkkksssssaaaa.springroadmap.member.domain.Member;
 import dev.kkkkkksssssaaaa.springroadmap.member.repository.MemberRepository;
 import dev.kkkkkksssssaaaa.springroadmap.member.repository.MemoryMemberRepository;
 
+import java.util.List;
+import java.util.Optional;
+
 public class MemberService {
 
     private final MemberRepository repository = new MemoryMemberRepository();
@@ -17,6 +20,10 @@ public class MemberService {
         validateDuplicateMember(member);
 
         return repository.save(member).getId();
+    }
+
+    public List<Member> findMembers() {
+        return repository.findAll();
     }
 
     private void validateDuplicateMember(Member member) {
