@@ -1,13 +1,22 @@
 package dev.kkkkkksssssaaaa.springroadmap.member.service;
 
 import dev.kkkkkksssssaaaa.springroadmap.member.domain.Member;
+import dev.kkkkkksssssaaaa.springroadmap.member.repository.MemberRepository;
+import dev.kkkkkksssssaaaa.springroadmap.member.repository.MemoryMemberRepository;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class MemberServiceTest {
 
-    private final MemberService memberService = new MemberService();
+    private MemberService memberService;
+
+    @BeforeEach
+    void beforeEach() {
+        MemberRepository repository = new MemoryMemberRepository();
+        memberService = new MemberService(repository);
+    }
 
     @Test
     void 회원가입() {
