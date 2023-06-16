@@ -1,6 +1,7 @@
 package dev.kkkkkksssssaaaa.springroadmap.member.repository;
 
 import dev.kkkkkksssssaaaa.springroadmap.member.domain.Member;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+@Repository
 public class MemoryMemberRepository implements MemberRepository {
 
     private static Map<Long, Member> store = new HashMap<>();
