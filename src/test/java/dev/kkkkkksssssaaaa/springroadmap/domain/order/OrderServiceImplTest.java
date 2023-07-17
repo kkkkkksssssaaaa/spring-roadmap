@@ -1,17 +1,26 @@
 package dev.kkkkkksssssaaaa.springroadmap.domain.order;
 
+import dev.kkkkkksssssaaaa.springroadmap.AppConfig;
 import dev.kkkkkksssssaaaa.springroadmap.domain.member.Grade;
 import dev.kkkkkksssssaaaa.springroadmap.domain.member.Member;
 import dev.kkkkkksssssaaaa.springroadmap.domain.member.MemberService;
-import dev.kkkkkksssssaaaa.springroadmap.domain.member.MemberServiceImpl;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class OrderServiceImplTest {
 
-    private final MemberService memberService = new MemberServiceImpl();
-    private final OrderService orderService = new OrderServiceImpl();
+    private MemberService memberService;
+    private OrderService orderService;
+
+    @BeforeEach
+    void beforeEach() {
+        AppConfig appConfig = new AppConfig();
+
+        this.memberService = appConfig.memberService();
+        this.orderService = appConfig.orderService();
+    }
 
     @Test
     void createOrder() {
