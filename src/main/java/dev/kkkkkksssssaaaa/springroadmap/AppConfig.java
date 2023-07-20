@@ -1,6 +1,8 @@
 package dev.kkkkkksssssaaaa.springroadmap;
 
-import dev.kkkkkksssssaaaa.springroadmap.domain.discount.FixDiscountPolicy;
+import dev.kkkkkksssssaaaa.springroadmap.domain.discount.DiscountPolicy;
+import dev.kkkkkksssssaaaa.springroadmap.domain.discount.RateDiscountPolicy;
+import dev.kkkkkksssssaaaa.springroadmap.domain.member.MemberRepository;
 import dev.kkkkkksssssaaaa.springroadmap.domain.member.MemberService;
 import dev.kkkkkksssssaaaa.springroadmap.domain.member.MemberServiceImpl;
 import dev.kkkkkksssssaaaa.springroadmap.domain.member.MemoryMemberRepository;
@@ -13,12 +15,12 @@ public class AppConfig {
         return new MemberServiceImpl(repository());
     }
 
-    public MemoryMemberRepository repository() {
+    public MemberRepository repository() {
         return new MemoryMemberRepository();
     }
 
-    public FixDiscountPolicy discountPolicy() {
-        return new FixDiscountPolicy();
+    public DiscountPolicy discountPolicy() {
+        return new RateDiscountPolicy();
     }
 
     public OrderService orderService() {
