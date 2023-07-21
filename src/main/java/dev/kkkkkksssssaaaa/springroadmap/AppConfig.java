@@ -8,21 +8,28 @@ import dev.kkkkkksssssaaaa.springroadmap.domain.member.MemberServiceImpl;
 import dev.kkkkkksssssaaaa.springroadmap.domain.member.MemoryMemberRepository;
 import dev.kkkkkksssssaaaa.springroadmap.domain.order.OrderService;
 import dev.kkkkkksssssaaaa.springroadmap.domain.order.OrderServiceImpl;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
+@Configuration
 public class AppConfig {
 
+    @Bean
     public MemberService memberService() {
         return new MemberServiceImpl(repository());
     }
 
+    @Bean
     public MemberRepository repository() {
         return new MemoryMemberRepository();
     }
 
+    @Bean
     public DiscountPolicy discountPolicy() {
         return new RateDiscountPolicy();
     }
 
+    @Bean
     public OrderService orderService() {
         return new OrderServiceImpl(
             repository(),
