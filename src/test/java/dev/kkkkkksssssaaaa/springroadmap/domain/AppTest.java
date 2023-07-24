@@ -1,6 +1,9 @@
 package dev.kkkkkksssssaaaa.springroadmap.domain;
 
 import dev.kkkkkksssssaaaa.springroadmap.AppConfig;
+import dev.kkkkkksssssaaaa.springroadmap.domain.discount.DiscountPolicy;
+import dev.kkkkkksssssaaaa.springroadmap.domain.discount.FixDiscountPolicy;
+import dev.kkkkkksssssaaaa.springroadmap.domain.discount.RateDiscountPolicy;
 import dev.kkkkkksssssaaaa.springroadmap.domain.member.MemberRepository;
 import dev.kkkkkksssssaaaa.springroadmap.domain.member.MemberService;
 import dev.kkkkkksssssaaaa.springroadmap.domain.member.MemberServiceImpl;
@@ -118,16 +121,18 @@ class AppTest {
                 MemberRepository.class,
                 duplicateBeanApplicationContext.getBean(
                     "memberRepository1",
-                    MemberRepository.class));
+                    MemberRepository.class
+                )
+            );
         }
         
         @Test
         void 특정_타입을_모두_조회하기() {
-            ApplicationContext duplicateBeanApplicationContext =
+            ApplicationContext duplicateBeanContext =
                 new AnnotationConfigApplicationContext(DuplicateBeanConfig.class);
 
             Map<String, MemberRepository> beansOfType 
-                = duplicateBeanApplicationContext.getBeansOfType(MemberRepository.class);
+                = duplicateBeanContext.getBeansOfType(MemberRepository.class);
 
             for (String key : beansOfType.keySet()) {
                 System.out.println("key = " + key);
@@ -150,6 +155,79 @@ class AppTest {
             @Bean
             public MemberRepository memberRepository2() {
                 return new MemoryMemberRepository();
+            }
+        }
+    }
+
+    @Nested
+    class FindExtendsClassTest {
+
+        @Test
+        void 부모_타입으로_조회시_자식이_둘_이상_있으면_중복_오류가_발생한다() {
+            ApplicationContext extendsBeanContext =
+                new AnnotationConfigApplicationContext(ExtendsConfig.class);
+
+            assertThrows(
+                NoUniqueBeanDefinitionException.class,
+                () -> extendsBeanContext.getBean(DiscountPolicy.class)
+            );
+        }
+
+        @Test
+        void 부모_타입으로_조회시_자식이_둘_이상_있으면_빈_이름을_지정하면_된다() {
+            ApplicationContext extendsBeanContext =
+                new AnnotationConfigApplicationContext(ExtendsConfig.class);
+
+            DiscountPolicy rateDiscountPolicy =
+                extendsBeanContext.getBean("rateDiscountPolicy", DiscountPolicy.class);
+
+            assertInstanceOf(RateDiscountPolicy.class, rateDiscountPolicy);
+        }
+
+        @Test
+        void 특정_하위_타입으로_조회() {
+            ApplicationContext extendsBeanContext =
+                new AnnotationConfigApplicationContext(ExtendsConfig.class);
+
+            RateDiscountPolicy rateDiscountPolicy
+                = extendsBeanContext.getBean("rateDiscountPolicy", RateDiscountPolicy.class);
+
+            assertInstanceOf(RateDiscountPolicy.class, rateDiscountPolicy);
+        }
+
+        @Test
+        void 부모_타입으로_모두_조회() {
+            ApplicationContext extendsBeanContext =
+                new AnnotationConfigApplicationContext(ExtendsConfig.class);
+
+            Map<String, DiscountPolicy> beansOfType = extendsBeanContext.getBeansOfType(DiscountPolicy.class);
+
+            assertEquals(2, beansOfType.size());
+        }
+
+        @Test
+        void Object타입으로_모두_조회() {
+            ApplicationContext extendsBeanContext =
+                new AnnotationConfigApplicationContext(ExtendsConfig.class);
+
+            Map<String, Object> beansOfType = extendsBeanContext.getBeansOfType(Object.class);
+
+            for (String key : beansOfType.keySet()) {
+                System.out.println("key = " + key);
+            }
+        }
+
+        @Configuration
+        static class ExtendsConfig {
+
+            @Bean
+            public DiscountPolicy rateDiscountPolicy() {
+                return new RateDiscountPolicy();
+            }
+
+            @Bean
+            public DiscountPolicy fixDiscountPolicy() {
+                return new FixDiscountPolicy();
             }
         }
     }
