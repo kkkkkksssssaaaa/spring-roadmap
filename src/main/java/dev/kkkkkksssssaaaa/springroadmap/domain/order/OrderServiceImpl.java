@@ -3,12 +3,16 @@ package dev.kkkkkksssssaaaa.springroadmap.domain.order;
 import dev.kkkkkksssssaaaa.springroadmap.domain.discount.DiscountPolicy;
 import dev.kkkkkksssssaaaa.springroadmap.domain.member.Member;
 import dev.kkkkkksssssaaaa.springroadmap.domain.member.MemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class OrderServiceImpl implements OrderService {
 
     private final MemberRepository repository;
     private final DiscountPolicy discountPolicy;
 
+    @Autowired
     public OrderServiceImpl(MemberRepository repository, DiscountPolicy discountPolicy) {
         this.repository = repository;
         this.discountPolicy = discountPolicy;
