@@ -16,11 +16,11 @@ public class AppConfig {
 
     @Bean
     public MemberService memberService() {
-        return new MemberServiceImpl(repository());
+        return new MemberServiceImpl(memberRepository());
     }
 
     @Bean
-    public MemberRepository repository() {
+    public MemberRepository memberRepository() {
         return new MemoryMemberRepository();
     }
 
@@ -32,7 +32,7 @@ public class AppConfig {
     @Bean
     public OrderService orderService() {
         return new OrderServiceImpl(
-            repository(),
+            memberRepository(),
             discountPolicy()
         );
     }
