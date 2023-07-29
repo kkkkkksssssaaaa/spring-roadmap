@@ -1,15 +1,13 @@
 package dev.kkkkkksssssaaaa.springroadmap.domain.discount;
 
+import dev.kkkkkksssssaaaa.springroadmap.annotation.MainDiscountPolicy;
 import dev.kkkkkksssssaaaa.springroadmap.domain.member.Grade;
 import dev.kkkkkksssssaaaa.springroadmap.domain.member.Member;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
-@Primary
-@Qualifier("mainDiscountPolicy")
+@MainDiscountPolicy
 public class RateDiscountPolicy implements DiscountPolicy {
 
     @Autowired
