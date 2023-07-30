@@ -1,4 +1,4 @@
-package dev.kkkkkksssssaaaa.springroadmap.core;
+package dev.kkkkkksssssaaaa.springroadmap.example.bean;
 
 import dev.kkkkkksssssaaaa.springroadmap.domain.member.Member;
 import org.junit.jupiter.api.Test;

@@ -1,4 +1,4 @@
-package dev.kkkkkksssssaaaa.springroadmap.core;
+package dev.kkkkkksssssaaaa.springroadmap.example.bean;
 
 import dev.kkkkkksssssaaaa.springroadmap.AppConfig;
 import org.junit.jupiter.api.Test;

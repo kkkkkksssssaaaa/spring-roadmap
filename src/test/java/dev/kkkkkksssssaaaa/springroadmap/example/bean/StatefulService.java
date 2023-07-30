@@ -1,4 +1,4 @@
-package dev.kkkkkksssssaaaa.springroadmap.core;
+package dev.kkkkkksssssaaaa.springroadmap.example.bean;
 
 public class StatefulService {
 

@@ -1,4 +1,4 @@
-package dev.kkkkkksssssaaaa.springroadmap.scan.filter;
+package dev.kkkkkksssssaaaa.springroadmap.example.configuration;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -9,5 +9,5 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-public @interface IncludeComponent {
+public @interface ExcludeComponent {
 }

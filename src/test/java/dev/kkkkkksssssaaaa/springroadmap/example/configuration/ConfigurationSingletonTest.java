@@ -1,4 +1,4 @@
-package dev.kkkkkksssssaaaa.springroadmap.core;
+package dev.kkkkkksssssaaaa.springroadmap.example.configuration;
 
 import dev.kkkkkksssssaaaa.springroadmap.AppConfig;
 import dev.kkkkkksssssaaaa.springroadmap.domain.member.MemberRepository;

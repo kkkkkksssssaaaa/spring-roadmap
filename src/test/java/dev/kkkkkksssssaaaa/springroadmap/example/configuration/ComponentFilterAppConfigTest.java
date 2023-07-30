@@ -1,4 +1,4 @@
-package dev.kkkkkksssssaaaa.springroadmap.scan.filter;
+package dev.kkkkkksssssaaaa.springroadmap.example.configuration;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
