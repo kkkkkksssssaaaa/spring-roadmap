@@ -29,12 +29,14 @@ public class NetworkClient implements InitializingBean, DisposableBean {
 
     @Override
     public void afterPropertiesSet() throws Exception {
+        System.out.println("NetworkClient.afterPropertiesSet");
         connect();
         call("초기화 연결 메세지");
     }
 
     @Override
     public void destroy() throws Exception {
+        System.out.println("NetworkClient.destroy");
         disconnect();
     }
 }
