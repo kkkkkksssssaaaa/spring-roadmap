@@ -1,5 +1,6 @@
 package dev.kkkkkksssssaaaa.springroadmap.example.scope;
 
+import jakarta.inject.Provider;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,10 +50,10 @@ public class SingletonWithPrototypeBeanTest {
     static class ClientBean {
 
         @Autowired
-        private ObjectProvider<PrototypeBean> objectProvider;
+        private Provider<PrototypeBean> objectProvider;
 
         public int add() {
-            PrototypeBean prototypeBean = objectProvider.getObject();
+            PrototypeBean prototypeBean = objectProvider.get();
             prototypeBean.add();
             return prototypeBean.get();
         }
