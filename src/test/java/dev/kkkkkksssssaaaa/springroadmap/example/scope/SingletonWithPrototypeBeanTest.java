@@ -1,8 +1,7 @@
 package dev.kkkkkksssssaaaa.springroadmap.example.scope;
 
-import jakarta.annotation.PostConstruct;
-import jakarta.annotation.PreDestroy;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Scope;
@@ -38,41 +37,24 @@ public class SingletonWithPrototypeBeanTest {
 
         System.out.println("find bean1");
         ClientBean bean1 = context.getBean(ClientBean.class);
-        bean1.add();
 
         System.out.println("find bean2");
         ClientBean bean2 = context.getBean(ClientBean.class);
-        bean2.add();
 
-        assertEquals(bean1.get(), bean2.get());
+        assertEquals(1, bean1.add());
+        assertEquals(1, bean2.add());
     }
 
     @Scope("singleton")
     static class ClientBean {
 
-        private final PrototypeBean prototypeBean;
-
         @Autowired
-        public ClientBean(PrototypeBean prototypeBean) {
-            this.prototypeBean = prototypeBean;
-        }
+        private ObjectProvider<PrototypeBean> objectProvider;
 
-        public void add() {
-            this.prototypeBean.count++;
-        }
-
-        public int get() {
-            return this.prototypeBean.count;
-        }
-
-        @PostConstruct
-        public void init() {
-            System.out.println("init, this = " + this);
-        }
-
-        @PreDestroy
-        public void destroy() {
-            System.out.println("destroy");
+        public int add() {
+            PrototypeBean prototypeBean = objectProvider.getObject();
+            prototypeBean.add();
+            return prototypeBean.get();
         }
     }
 
@@ -87,16 +69,6 @@ public class SingletonWithPrototypeBeanTest {
 
         public int get() {
             return this.count;
-        }
-
-        @PostConstruct
-        public void init() {
-            System.out.println("init, this = " + this);
-        }
-
-        @PreDestroy
-        public void destroy() {
-            System.out.println("destroy");
         }
     }
 }
