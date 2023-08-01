@@ -7,6 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SpringRoadmapApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringRoadmapApplication.class);
+        SpringApplication.run(SpringRoadmapApplication.class, args);
     }
 }
