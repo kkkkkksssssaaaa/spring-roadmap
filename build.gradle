@@ -16,7 +16,9 @@ allprojects {
 
     sourceCompatibility = '17'
 
-    bootJar.enabled = false
+    bootJar {
+        enabled = false
+    }
 
     repositories {
         mavenCentral()
@@ -28,8 +30,13 @@ allprojects {
 }
 
 project(':basic') {
-    bootJar.enabled = false
-    jar.enabled = false
+    bootJar {
+        enabled = false
+    }
+
+    jar {
+        enabled = true
+    }
 
     dependencies {
         compileOnly 'org.projectlombok:lombok:1.18.20'
@@ -41,5 +48,19 @@ project(':basic') {
         implementation 'org.springframework.boot:spring-boot-starter-web'
 
         testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    }
+}
+
+project(':advanced') {
+    bootJar {
+        enabled = false
+    }
+
+    jar {
+        enabled = true
+    }
+
+    dependencies {
+        implementation 'org.springframework.boot:spring-boot-starter'
     }
 }
