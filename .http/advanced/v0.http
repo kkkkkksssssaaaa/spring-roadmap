@@ -8,3 +8,6 @@ GET {{host}}/v2/request?itemId=ex
 
 ###
 GET {{host}}/v3/request?itemId=ex
+
+###
+GET {{host}}/v4/request?itemId=ex
