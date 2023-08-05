@@ -1,7 +1,7 @@
 package dev.kkkkkksssssaaaa.springroadmap.advanced.config;
 
-import dev.kkkkkksssssaaaa.springroadmap.advanced.trace.logtarce.FieldLogTrace;
 import dev.kkkkkksssssaaaa.springroadmap.advanced.trace.logtarce.LogTrace;
+import dev.kkkkkksssssaaaa.springroadmap.advanced.trace.logtarce.ThreadLocalLogTrace;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -10,6 +10,6 @@ public class LogTraceConfig {
 
     @Bean
     public LogTrace logTrace() {
-        return new FieldLogTrace();
+        return new ThreadLocalLogTrace();
     }
 }
