@@ -2,3 +2,6 @@ GET {{host}}/v0/request?itemId=1
 
 ###
 GET {{host}}/v1/request?itemId=e
+
+###
+GET {{host}}/v2/request?itemId=ex
