@@ -1,4 +1,4 @@
-package dev.kkkkkksssssaaaa.springroadmap.advancedproxy.advancedproxy.hellotrace;
+package dev.kkkkkksssssaaaa.springroadmap.advancedproxy.trace.hellotrace;
 
 import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.trace.TraceStatus;
 import org.junit.jupiter.api.Test;
