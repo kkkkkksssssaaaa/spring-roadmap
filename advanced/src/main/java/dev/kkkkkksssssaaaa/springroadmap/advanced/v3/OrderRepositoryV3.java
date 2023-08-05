@@ -21,10 +21,21 @@ public class OrderRepositoryV3 {
                 throw new IllegalStateException("예외 발생!");
             }
 
+            sleep(1000);
+
             trace.end(status);
         } catch (Exception e) {
             trace.exception(status, e);
             throw e;
+        }
+    }
+
+    private void sleep(int millis) {
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 }
