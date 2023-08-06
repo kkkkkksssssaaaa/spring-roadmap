@@ -1,4 +1,4 @@
-package dev.kkkkkksssssaaaa.springroadmap.advancedproxy.proxy.pure.code;
+package dev.kkkkkksssssaaaa.springroadmap.advancedproxy.proxy.code;
 
 import lombok.extern.slf4j.Slf4j;
 

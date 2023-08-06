@@ -1,9 +1,9 @@
-package dev.kkkkkksssssaaaa.springroadmap.advancedproxy.proxy.pure;
+package dev.kkkkkksssssaaaa.springroadmap.advancedproxy.proxy;
 
-import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.proxy.pure.code.CacheProxy;
-import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.proxy.pure.code.ProxyPatternClient;
-import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.proxy.pure.code.RealSubject;
-import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.proxy.pure.code.Subject;
+import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.proxy.code.CacheProxy;
+import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.proxy.code.ProxyPatternClient;
+import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.proxy.code.RealSubject;
+import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.proxy.code.Subject;
 import org.junit.jupiter.api.Test;
 
 public class ProxyPatternTest {
