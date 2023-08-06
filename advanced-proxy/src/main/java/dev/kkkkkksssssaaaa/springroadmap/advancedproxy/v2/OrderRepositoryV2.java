@@ -1,5 +1,7 @@
 package dev.kkkkkksssssaaaa.springroadmap.advancedproxy.v2;
 
+import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.common.ThreadSleep;
+
 public class OrderRepositoryV2 {
 
     public void save(String itemId) {
@@ -7,14 +9,6 @@ public class OrderRepositoryV2 {
             throw new IllegalStateException("예외 발생!");
         }
 
-        sleep(1000);
-    }
-
-    private void sleep(int millis) {
-        try {
-            Thread.sleep(millis);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        ThreadSleep.toMillis(1000);
     }
 }

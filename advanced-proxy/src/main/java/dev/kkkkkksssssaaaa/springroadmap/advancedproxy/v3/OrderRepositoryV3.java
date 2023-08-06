@@ -1,5 +1,6 @@
 package dev.kkkkkksssssaaaa.springroadmap.advancedproxy.v3;
 
+import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.common.ThreadSleep;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -10,14 +11,6 @@ public class OrderRepositoryV3 {
             throw new IllegalStateException("예외 발생!");
         }
 
-        sleep(1000);
-    }
-
-    private void sleep(int millis) {
-        try {
-            Thread.sleep(millis);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        ThreadSleep.toMillis(1000);
     }
 }
