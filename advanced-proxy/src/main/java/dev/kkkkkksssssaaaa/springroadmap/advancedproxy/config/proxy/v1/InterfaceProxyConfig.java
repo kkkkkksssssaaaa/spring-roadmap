@@ -17,21 +17,21 @@ import org.springframework.context.annotation.Configuration;
 public class InterfaceProxyConfig {
 
     @Bean
-    public OrderControllerV1 orderController(LogTrace trace) {
-        OrderControllerV1Impl controllerImpl = new OrderControllerV1Impl(orderService(trace));
+    public OrderControllerV1 orderControllerV1(LogTrace trace) {
+        OrderControllerV1Impl controllerImpl = new OrderControllerV1Impl(orderServiceV1(trace));
 
         return new OrderControllerInterfaceProxy(controllerImpl, trace);
     }
 
     @Bean
-    public OrderServiceV1 orderService(LogTrace trace) {
-        OrderServiceV1Impl serviceImpl = new OrderServiceV1Impl(orderRepository(trace));
+    public OrderServiceV1 orderServiceV1(LogTrace trace) {
+        OrderServiceV1Impl serviceImpl = new OrderServiceV1Impl(orderRepositoryV1(trace));
 
         return new OrderServiceInterfaceProxy(serviceImpl, trace);
     }
 
     @Bean
-    public OrderRepositoryV1 orderRepository(LogTrace trace) {
+    public OrderRepositoryV1 orderRepositoryV1(LogTrace trace) {
         OrderRepositoryV1Impl repositoryImpl = new OrderRepositoryV1Impl();
 
         return new OrderRepositoryInterfaceProxy(repositoryImpl, trace);
