@@ -1,7 +1,7 @@
 package dev.kkkkkksssssaaaa.springroadmap.advancedproxy;
 
 import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.config.ExcludeComponent;
-import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.config.proxy.v1.InterfaceProxyConfig;
+import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.config.proxy.v1.ConcreteProxyConfig;
 import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.trace.logtarce.LogTrace;
 import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.trace.logtarce.ThreadLocalLogTrace;
 import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.v1.OrderControllerV1;
@@ -14,7 +14,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.FilterType;
 import org.springframework.context.annotation.Import;
 
-@Import(InterfaceProxyConfig.class)
+@Import(ConcreteProxyConfig.class)
 @SpringBootApplication(
 	scanBasePackages = "dev.kkkkkksssssaaaa.springroadmap.advancedproxy"
 )
