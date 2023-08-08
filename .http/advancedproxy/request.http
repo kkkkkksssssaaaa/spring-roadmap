@@ -2,6 +2,9 @@
 GET {{host}}/v1/request?itemId=1
 
 ###
+GET {{host}}/v1/no-log?itemId=1
+
+###
 GET {{host}}/v2/request?itemId=1
 
 ###
