@@ -3,4 +3,5 @@ package dev.kkkkkksssssaaaa.springroadmap.advancedproxy.proxy.jdkdynamicproxy.co
 public interface AInterface {
 
     String call();
+    String call2();
 }

@@ -10,4 +10,10 @@ public class AImpl implements AInterface {
         log.info("A 호출");
         return "A";
     }
+
+    @Override
+    public String call2() {
+        log.info("A2 호출");
+        return "A2";
+    }
 }
