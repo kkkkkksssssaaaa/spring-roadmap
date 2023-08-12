@@ -66,8 +66,8 @@ public class ProxyFactoryConfigV1 {
 
         pointcut.setMappedNames("request*", "order*", "save*");
 
-        LogTraceAdvice advcie = new LogTraceAdvice(trace);
+        LogTraceAdvice advice = new LogTraceAdvice(trace);
 
-        return new DefaultPointcutAdvisor(pointcut, advcie);
+        return new DefaultPointcutAdvisor(pointcut, advice);
     }
 }
