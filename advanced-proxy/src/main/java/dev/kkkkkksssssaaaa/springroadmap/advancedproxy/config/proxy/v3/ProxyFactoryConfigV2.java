@@ -13,10 +13,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Slf4j
-@Configuration
+//@Configuration
 public class ProxyFactoryConfigV2 {
 
-    @Bean
+//    @Bean
     public OrderControllerV2 orderControllerV2(LogTrace trace) {
         OrderControllerV2 target = new OrderControllerV2(orderServiceV2(trace));
 
@@ -30,7 +30,7 @@ public class ProxyFactoryConfigV2 {
         return proxy;
     }
 
-    @Bean
+//    @Bean
     public OrderServiceV2 orderServiceV2(LogTrace trace) {
         OrderServiceV2 target = new OrderServiceV2(orderRepositoryV2(trace));
 
@@ -44,7 +44,7 @@ public class ProxyFactoryConfigV2 {
         return proxy;
     }
 
-    @Bean
+//    @Bean
     public OrderRepositoryV2 orderRepositoryV2(LogTrace trace) {
         OrderRepositoryV2 target = new OrderRepositoryV2();
 
