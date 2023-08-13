@@ -1,4 +1,4 @@
-package dev.kkkkkksssssaaaa.springroadmap.advancedproxy.v2;
+package dev.kkkkkksssssaaaa.springroadmap.advancedproxy.app.v2;
 
 import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.config.ExcludeComponent;
 import lombok.extern.slf4j.Slf4j;

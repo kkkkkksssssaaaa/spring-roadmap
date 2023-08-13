@@ -4,12 +4,12 @@ import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.config.proxy.v1.abstracti
 import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.config.proxy.v1.abstraction.OrderRepositoryInterfaceProxy;
 import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.config.proxy.v1.abstraction.OrderServiceInterfaceProxy;
 import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.trace.logtarce.LogTrace;
-import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.v1.OrderControllerV1;
-import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.v1.OrderControllerV1Impl;
-import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.v1.OrderRepositoryV1;
-import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.v1.OrderRepositoryV1Impl;
-import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.v1.OrderServiceV1;
-import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.v1.OrderServiceV1Impl;
+import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.app.v1.OrderControllerV1;
+import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.app.v1.OrderControllerV1Impl;
+import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.app.v1.OrderRepositoryV1;
+import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.app.v1.OrderRepositoryV1Impl;
+import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.app.v1.OrderServiceV1;
+import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.app.v1.OrderServiceV1Impl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

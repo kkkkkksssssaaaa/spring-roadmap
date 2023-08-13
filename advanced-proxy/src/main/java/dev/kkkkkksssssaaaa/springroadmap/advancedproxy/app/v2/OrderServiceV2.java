@@ -1,4 +1,4 @@
-package dev.kkkkkksssssaaaa.springroadmap.advancedproxy.v2;
+package dev.kkkkkksssssaaaa.springroadmap.advancedproxy.app.v2;
 
 public class OrderServiceV2 {
 

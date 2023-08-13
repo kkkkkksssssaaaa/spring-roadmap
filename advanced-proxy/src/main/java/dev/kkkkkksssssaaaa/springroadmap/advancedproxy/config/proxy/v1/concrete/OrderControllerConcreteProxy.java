@@ -2,7 +2,7 @@ package dev.kkkkkksssssaaaa.springroadmap.advancedproxy.config.proxy.v1.concrete
 
 import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.trace.TraceStatus;
 import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.trace.logtarce.LogTrace;
-import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.v2.OrderControllerV2;
+import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.app.v2.OrderControllerV2;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class OrderControllerConcreteProxy extends OrderControllerV2 {

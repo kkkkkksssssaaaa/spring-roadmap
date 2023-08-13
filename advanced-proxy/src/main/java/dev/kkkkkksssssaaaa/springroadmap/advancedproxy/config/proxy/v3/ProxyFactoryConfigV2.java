@@ -1,9 +1,9 @@
 package dev.kkkkkksssssaaaa.springroadmap.advancedproxy.config.proxy.v3;
 
 import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.trace.logtarce.LogTrace;
-import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.v2.OrderControllerV2;
-import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.v2.OrderRepositoryV2;
-import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.v2.OrderServiceV2;
+import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.app.v2.OrderControllerV2;
+import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.app.v2.OrderRepositoryV2;
+import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.app.v2.OrderServiceV2;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.aop.Advisor;
 import org.springframework.aop.framework.ProxyFactory;

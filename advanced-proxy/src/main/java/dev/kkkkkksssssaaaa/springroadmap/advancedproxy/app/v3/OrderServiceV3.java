@@ -1,4 +1,4 @@
-package dev.kkkkkksssssaaaa.springroadmap.advancedproxy.v3;
+package dev.kkkkkksssssaaaa.springroadmap.advancedproxy.app.v3;
 
 import org.springframework.stereotype.Service;
 

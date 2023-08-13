@@ -1,8 +1,8 @@
 package dev.kkkkkksssssaaaa.springroadmap.advancedproxy.config;
 
-import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.v2.OrderControllerV2;
-import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.v2.OrderRepositoryV2;
-import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.v2.OrderServiceV2;
+import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.app.v2.OrderControllerV2;
+import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.app.v2.OrderRepositoryV2;
+import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.app.v2.OrderServiceV2;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

@@ -2,7 +2,7 @@ package dev.kkkkkksssssaaaa.springroadmap.advancedproxy.config.proxy.v1.abstract
 
 import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.trace.TraceStatus;
 import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.trace.logtarce.LogTrace;
-import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.v1.OrderControllerV1;
+import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.app.v1.OrderControllerV1;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,10 +1,8 @@
-package dev.kkkkkksssssaaaa.springroadmap.advancedproxy.v3;
+package dev.kkkkkksssssaaaa.springroadmap.advancedproxy.app.v2;
 
 import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.common.ThreadSleep;
-import org.springframework.stereotype.Repository;
 
-@Repository
-public class OrderRepositoryV3 {
+public class OrderRepositoryV2 {
 
     public void save(String itemId) {
         if (itemId.equals("ex")) {

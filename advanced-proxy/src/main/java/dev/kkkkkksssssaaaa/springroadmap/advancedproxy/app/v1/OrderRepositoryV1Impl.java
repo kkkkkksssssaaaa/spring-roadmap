@@ -1,4 +1,4 @@
-package dev.kkkkkksssssaaaa.springroadmap.advancedproxy.v1;
+package dev.kkkkkksssssaaaa.springroadmap.advancedproxy.app.v1;
 
 import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.common.ThreadSleep;
 
