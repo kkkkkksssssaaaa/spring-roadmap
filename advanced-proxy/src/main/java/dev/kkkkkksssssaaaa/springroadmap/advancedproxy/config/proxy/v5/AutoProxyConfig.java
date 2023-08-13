@@ -31,11 +31,25 @@ public class AutoProxyConfig {
         return new DefaultPointcutAdvisor(pointcut, advice);
     }
 
-    @Bean
+//    @Bean
     public Advisor advisor2(LogTrace trace) {
         AspectJExpressionPointcut pointcut = new AspectJExpressionPointcut();
 
         pointcut.setExpression("execution(* dev.kkkkkksssssaaaa.springroadmap.advancedproxy.app..*(..))");
+
+        LogTraceAdvice advice = new LogTraceAdvice(trace);
+
+        return new DefaultPointcutAdvisor(pointcut, advice);
+    }
+
+    @Bean
+    public Advisor advisor3(LogTrace trace) {
+        AspectJExpressionPointcut pointcut = new AspectJExpressionPointcut();
+
+        pointcut.setExpression(
+            "execution(* dev.kkkkkksssssaaaa.springroadmap.advancedproxy.app..*(..)) " +
+            "&& !execution(* dev.kkkkkksssssaaaa.springroadmap.advancedproxy.app..noLog(..))"
+        );
 
         LogTraceAdvice advice = new LogTraceAdvice(trace);
 
