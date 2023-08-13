@@ -10,24 +10,24 @@ import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.app.v2.OrderServiceV2;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
+//@Configuration
 public class ConcreteProxyConfig {
 
-    @Bean
+//    @Bean
     public OrderRepositoryV2 orderRepositoryV2(LogTrace trace) {
         OrderRepositoryV2 target = new OrderRepositoryV2();
 
         return new OrderRepositoryConcreteProxy(target, trace);
     }
 
-    @Bean
+//    @Bean
     public OrderServiceV2 orderServiceV2(LogTrace trace) {
         OrderServiceV2 target = new OrderServiceV2(orderRepositoryV2(trace));
 
         return new OrderServiceConcreteProxy(target, trace);
     }
 
-    @Bean
+//    @Bean
     public OrderControllerV2 orderControllerV2(LogTrace trace) {
         OrderControllerV2 target = new OrderControllerV2(orderServiceV2(trace));
 

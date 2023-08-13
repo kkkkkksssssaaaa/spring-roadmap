@@ -13,10 +13,10 @@ import org.springframework.context.annotation.Configuration;
 
 import java.lang.reflect.Proxy;
 
-@Configuration
+//@Configuration
 public class DynamicProxyBasicConfig {
 
-    @Bean
+//    @Bean
     public OrderRepositoryV1 orderRepositoryV1(LogTrace trace) {
         OrderRepositoryV1 target = new OrderRepositoryV1Impl();
 
@@ -27,7 +27,7 @@ public class DynamicProxyBasicConfig {
         );
     }
 
-    @Bean
+//    @Bean
     public OrderServiceV1 orderServiceV1(LogTrace trace) {
         OrderServiceV1 target = new OrderServiceV1Impl(orderRepositoryV1(trace));
 
@@ -38,7 +38,7 @@ public class DynamicProxyBasicConfig {
         );
     }
 
-    @Bean
+//    @Bean
     public OrderControllerV1 orderControllerV1(LogTrace trace) {
         OrderControllerV1 target = new OrderControllerV1Impl(orderServiceV1(trace));
 
