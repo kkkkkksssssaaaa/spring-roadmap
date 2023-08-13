@@ -12,3 +12,6 @@ GET {{host}}/v2/no-log?itemId=1
 
 ###
 GET {{host}}/v3/request?itemId=1
+
+###
+GET {{host}}/v3/no-log?itemId=1
