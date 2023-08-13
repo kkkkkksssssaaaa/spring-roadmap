@@ -6,6 +6,7 @@ import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.config.proxy.v3.LogTraceA
 import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.trace.logtarce.LogTrace;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.aop.Advisor;
+import org.springframework.aop.aspectj.AspectJExpressionPointcut;
 import org.springframework.aop.support.DefaultPointcutAdvisor;
 import org.springframework.aop.support.NameMatchMethodPointcut;
 import org.springframework.context.annotation.Bean;
@@ -19,11 +20,22 @@ import org.springframework.context.annotation.Import;
 public class AutoProxyConfig {
 
     // 자동 프록시 생성기가 모든 Advisor 를 참조하기 때문에, Advisor 만 빈으로 등록해도 된다.
-    @Bean
+//    @Bean
     public Advisor advisor1(LogTrace trace) {
         NameMatchMethodPointcut pointcut = new NameMatchMethodPointcut();
 
         pointcut.setMappedNames("request*", "order*", "save*");
+
+        LogTraceAdvice advice = new LogTraceAdvice(trace);
+
+        return new DefaultPointcutAdvisor(pointcut, advice);
+    }
+
+    @Bean
+    public Advisor advisor2(LogTrace trace) {
+        AspectJExpressionPointcut pointcut = new AspectJExpressionPointcut();
+
+        pointcut.setExpression("execution(* dev.kkkkkksssssaaaa.springroadmap.advancedproxy.app..*(..))");
 
         LogTraceAdvice advice = new LogTraceAdvice(trace);
 
