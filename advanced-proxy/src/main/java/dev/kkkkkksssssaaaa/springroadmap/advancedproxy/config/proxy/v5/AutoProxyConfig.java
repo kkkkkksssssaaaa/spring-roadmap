@@ -14,8 +14,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
 @Slf4j
-@Configuration
-@Import({AppV1Config.class, AppV2Config.class})
+//@Configuration
+//@Import({AppV1Config.class, AppV2Config.class})
 // spring boot starter aop 를 패키지 의존성에 등록하게 된다면 자동 프록시 생성기가 빈으로 등록되게 된다.
 public class AutoProxyConfig {
 
