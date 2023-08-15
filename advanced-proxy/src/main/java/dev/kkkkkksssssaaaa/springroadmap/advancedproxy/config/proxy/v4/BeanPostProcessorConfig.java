@@ -14,12 +14,12 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
 @Slf4j
-//@Configuration
+@Configuration
 // ComponentScan 을 수행하지 않는 설정을 수동 등록
-//@Import({AppV1Config.class, AppV2Config.class})
+@Import({AppV1Config.class, AppV2Config.class})
 public class BeanPostProcessorConfig {
 
-//    @Bean
+    @Bean
     public PackageLogTraceProxyPostProcessor logTraceProxyPostProcessor(LogTrace trace) {
         return new PackageLogTraceProxyPostProcessor(
             "dev.kkkkkksssssaaaa.springroadmap.advancedproxy.app",

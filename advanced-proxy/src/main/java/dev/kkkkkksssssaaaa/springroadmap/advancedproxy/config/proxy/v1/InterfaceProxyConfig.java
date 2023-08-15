@@ -13,24 +13,24 @@ import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.app.v1.OrderServiceV1Impl
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-//@Configuration
+@Configuration
 public class InterfaceProxyConfig {
 
-//    @Bean
+    @Bean
     public OrderControllerV1 orderControllerV1(LogTrace trace) {
         OrderControllerV1Impl controllerImpl = new OrderControllerV1Impl(orderServiceV1(trace));
 
         return new OrderControllerInterfaceProxy(controllerImpl, trace);
     }
 
-//    @Bean
+    @Bean
     public OrderServiceV1 orderServiceV1(LogTrace trace) {
         OrderServiceV1Impl serviceImpl = new OrderServiceV1Impl(orderRepositoryV1(trace));
 
         return new OrderServiceInterfaceProxy(serviceImpl, trace);
     }
 
-//    @Bean
+    @Bean
     public OrderRepositoryV1 orderRepositoryV1(LogTrace trace) {
         OrderRepositoryV1Impl repositoryImpl = new OrderRepositoryV1Impl();
 

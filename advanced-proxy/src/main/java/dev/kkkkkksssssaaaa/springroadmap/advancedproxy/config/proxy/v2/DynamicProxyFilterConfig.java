@@ -8,10 +8,12 @@ import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.app.v1.OrderRepositoryV1;
 import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.app.v1.OrderRepositoryV1Impl;
 import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.app.v1.OrderServiceV1;
 import dev.kkkkkksssssaaaa.springroadmap.advancedproxy.app.v1.OrderServiceV1Impl;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 import java.lang.reflect.Proxy;
 
-//@Configuration
+@Configuration
 public class DynamicProxyFilterConfig {
 
     private static final String[] PATTERNS = {
@@ -20,7 +22,7 @@ public class DynamicProxyFilterConfig {
         "save*"
     };
 
-//    @Bean
+    @Bean
     public OrderRepositoryV1 orderRepositoryV1(LogTrace trace) {
         OrderRepositoryV1 target = new OrderRepositoryV1Impl();
 
@@ -31,7 +33,7 @@ public class DynamicProxyFilterConfig {
         );
     }
 
-//    @Bean
+    @Bean
     public OrderServiceV1 orderServiceV1(LogTrace trace) {
         OrderServiceV1 target = new OrderServiceV1Impl(orderRepositoryV1(trace));
 
@@ -42,7 +44,7 @@ public class DynamicProxyFilterConfig {
         );
     }
 
-//    @Bean
+    @Bean
     public OrderControllerV1 orderControllerV1(LogTrace trace) {
         OrderControllerV1 target = new OrderControllerV1Impl(orderServiceV1(trace));
 
