@@ -2,7 +2,7 @@ package dev.kkkkkksssssaaaa.springroadmap.advancedaop;
 
 import dev.kkkkkksssssaaaa.springroadmap.advancedaop.order.OrderRepository;
 import dev.kkkkkksssssaaaa.springroadmap.advancedaop.order.OrderService;
-import dev.kkkkkksssssaaaa.springroadmap.advancedaop.order.aop.AspectV4WithPointcut;
+import dev.kkkkkksssssaaaa.springroadmap.advancedaop.order.aop.AspectV5SerOrder;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.aop.support.AopUtils;
@@ -13,7 +13,10 @@ import org.springframework.context.annotation.Import;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @Slf4j
-@Import(AspectV4WithPointcut.class)
+@Import({
+    AspectV5SerOrder.LogAspect.class,
+    AspectV5SerOrder.TxAspect.class
+})
 @SpringBootTest
 public class AopTest {
 
