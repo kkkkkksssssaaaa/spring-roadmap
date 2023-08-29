@@ -2,7 +2,7 @@ package dev.kkkkkksssssaaaa.springroadmap.advancedaop;
 
 import dev.kkkkkksssssaaaa.springroadmap.advancedaop.order.OrderRepository;
 import dev.kkkkkksssssaaaa.springroadmap.advancedaop.order.OrderService;
-import dev.kkkkkksssssaaaa.springroadmap.advancedaop.order.aop.AspectV5SerOrder;
+import dev.kkkkkksssssaaaa.springroadmap.advancedaop.order.aop.AspectV6Advice;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.aop.support.AopUtils;
@@ -14,8 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @Slf4j
 @Import({
-    AspectV5SerOrder.LogAspect.class,
-    AspectV5SerOrder.TxAspect.class
+    AspectV6Advice.class
 })
 @SpringBootTest
 public class AopTest {
