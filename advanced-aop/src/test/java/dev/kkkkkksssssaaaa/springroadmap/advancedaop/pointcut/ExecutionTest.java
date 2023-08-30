@@ -8,6 +8,9 @@ import org.springframework.aop.aspectj.AspectJExpressionPointcut;
 
 import java.lang.reflect.Method;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 @Slf4j
 public class ExecutionTest {
 
@@ -23,5 +26,75 @@ public class ExecutionTest {
     void printMethod() {
         // java.lang.String dev.kkkkkksssssaaaa.springroadmap.advancedaop.member.MemberServiceImpl.hello(java.lang.String)
         log.info("helloMethod={}", helloMethod);
+    }
+
+    @Test
+    void exactMatch() {
+        pointcut.setExpression("execution(public java.lang.String dev.kkkkkksssssaaaa.springroadmap.advancedaop.member.MemberServiceImpl.hello(String))");
+
+        assertTrue(pointcut.matches(helloMethod, MemberServiceImpl.class));
+    }
+
+    @Test
+    void allMatch() {
+        pointcut.setExpression("execution(* *(..))");
+
+        assertTrue(pointcut.matches(helloMethod, MemberServiceImpl.class));
+    }
+
+    @Test
+    void nameMatch1() {
+        pointcut.setExpression("execution(* hello(..))");
+
+        assertTrue(pointcut.matches(helloMethod, MemberServiceImpl.class));
+    }
+
+    @Test
+    void nameMatch2() {
+        pointcut.setExpression("execution(* hel*(..))");
+
+        assertTrue(pointcut.matches(helloMethod, MemberServiceImpl.class));
+    }
+
+    @Test
+    void nameMatch3() {
+        pointcut.setExpression("execution(* *lo*(..))");
+
+        assertTrue(pointcut.matches(helloMethod, MemberServiceImpl.class));
+    }
+
+    @Test
+    void nameMatchFailed() {
+        pointcut.setExpression("execution(* nono(..))");
+
+        assertFalse(pointcut.matches(helloMethod, MemberServiceImpl.class));
+    }
+
+    @Test
+    void packageMatch() {
+        pointcut.setExpression("execution(public java.lang.String dev.kkkkkksssssaaaa.springroadmap.advancedaop.member.MemberServiceImpl.hello(String))");
+
+        assertTrue(pointcut.matches(helloMethod, MemberServiceImpl.class));
+    }
+
+    @Test
+    void packageMatch2() {
+        pointcut.setExpression("execution(public java.lang.String dev.kkkkkksssssaaaa.springroadmap.advancedaop.member.*.*(..))");
+
+        assertTrue(pointcut.matches(helloMethod, MemberServiceImpl.class));
+    }
+
+    @Test
+    void packageMatch3() {
+        pointcut.setExpression("execution(public java.lang.String dev.kkkkkksssssaaaa.springroadmap.advancedaop.member..*.*(..))");
+
+        assertTrue(pointcut.matches(helloMethod, MemberServiceImpl.class));
+    }
+
+    @Test
+    void packageMatchFailed() {
+        pointcut.setExpression("execution(public java.lang.String dev.kkkkkksssssaaaa.springroadmap.advancedaop.*.*(..))");
+
+        assertFalse(pointcut.matches(helloMethod, MemberServiceImpl.class));
     }
 }
