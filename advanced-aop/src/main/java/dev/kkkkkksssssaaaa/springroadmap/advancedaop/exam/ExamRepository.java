@@ -1,5 +1,6 @@
 package dev.kkkkkksssssaaaa.springroadmap.advancedaop.exam;
 
+import dev.kkkkkksssssaaaa.springroadmap.advancedaop.exam.annotation.Retry;
 import dev.kkkkkksssssaaaa.springroadmap.advancedaop.exam.annotation.Trace;
 import org.springframework.stereotype.Repository;
 
@@ -9,6 +10,7 @@ public class ExamRepository {
     private static int seq = 0;
 
     @Trace
+    @Retry(4)
     public String save(String itemid) {
         seq++;
 

@@ -1,4 +1,4 @@
-package dev.kkkkkksssssaaaa.springroadmap.advancedaop.exam.annotation.aop;
+package dev.kkkkkksssssaaaa.springroadmap.advancedaop.exam.aop;
 
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
