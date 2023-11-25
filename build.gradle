@@ -30,10 +30,6 @@ allprojects {
 }
 
 project(':basic') {
-    bootJar {
-        enabled = false
-    }
-
     jar {
         enabled = true
     }
@@ -52,10 +48,6 @@ project(':basic') {
 }
 
 project(':advanced') {
-    bootJar {
-        enabled = false
-    }
-
     jar {
         enabled = true
     }
@@ -76,10 +68,6 @@ project(':advanced') {
 }
 
 project(':advanced-proxy') {
-    bootJar {
-        enabled = false
-    }
-
     jar {
         enabled = true
     }
@@ -101,10 +89,6 @@ project(':advanced-proxy') {
 }
 
 project(':advanced-aop') {
-    bootJar {
-        enabled = false
-    }
-
     jar {
         enabled = true
     }
@@ -125,10 +109,6 @@ project(':advanced-aop') {
 }
 
 project(':db1') {
-    bootJar {
-        enabled = false
-    }
-
     jar {
         enabled = true
     }
