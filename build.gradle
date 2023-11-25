@@ -123,3 +123,17 @@ project(':advanced-aop') {
         testImplementation 'org.springframework.boot:spring-boot-starter-test'
     }
 }
+
+project(':db1') {
+    bootJar {
+        enabled = false
+    }
+
+    jar {
+        enabled = true
+    }
+
+    dependencies {
+        implementation 'org.springframework.boot:spring-boot-starter'
+    }
+}
