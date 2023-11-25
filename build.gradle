@@ -114,6 +114,17 @@ project(':db1') {
     }
 
     dependencies {
-        implementation 'org.springframework.boot:spring-boot-starter'
+        implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+
+        runtimeOnly 'com.h2database:h2:2.1.214'
+
+        compileOnly 'org.projectlombok:lombok:1.18.20'
+        annotationProcessor 'org.projectlombok:lombok:1.18.20'
+
+        // test
+        testCompileOnly 'org.projectlombok:lombok:1.18.20'
+        testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
+
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
     }
 }
