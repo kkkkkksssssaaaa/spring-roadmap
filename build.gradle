@@ -115,6 +115,7 @@ project(':db1') {
 
     dependencies {
         implementation 'org.springframework.boot:spring-boot-starter-web'
+        implementation 'org.springframework.boot:spring-boot-starter-jdbc'
 
         runtimeOnly 'com.h2database:h2:2.1.214'
 
