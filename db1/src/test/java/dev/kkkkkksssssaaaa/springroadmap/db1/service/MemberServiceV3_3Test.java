@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.springframework.aop.support.AopUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.TestConfiguration;
@@ -21,7 +22,9 @@ import static dev.kkkkkksssssaaaa.springroadmap.db1.connection.ConnectionConst.P
 import static dev.kkkkkksssssaaaa.springroadmap.db1.connection.ConnectionConst.URL;
 import static dev.kkkkkksssssaaaa.springroadmap.db1.connection.ConnectionConst.USERNAME;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * 기본 동작, 트랜잭션이 없어서 문제가 발생함
@@ -47,6 +50,10 @@ class MemberServiceV3_3Test {
     @Test
     void aopCheck() {
         log.info("memberService class={}", service.getClass());
+        log.info("memberRepository class={}", repository.getClass());
+
+        assertTrue(AopUtils.isAopProxy(service));
+        assertFalse(AopUtils.isAopProxy(repository));
     }
 
     @Test
