@@ -45,6 +45,11 @@ class MemberServiceV3_3Test {
     }
 
     @Test
+    void aopCheck() {
+        log.info("memberService class={}", service.getClass());
+    }
+
+    @Test
     @DisplayName("정상 이체")
     void accountTransfer() throws SQLException {
         // given
