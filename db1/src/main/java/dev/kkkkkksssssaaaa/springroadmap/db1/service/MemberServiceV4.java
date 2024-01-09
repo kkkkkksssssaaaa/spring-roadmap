@@ -20,7 +20,7 @@ public class MemberServiceV4 {
     }
 
     @Transactional
-    public void accountTransfer(String fromId, String toId, int money) throws SQLException {
+    public void accountTransfer(String fromId, String toId, int money) {
         bizLogic(fromId, toId, money);
     }
 
