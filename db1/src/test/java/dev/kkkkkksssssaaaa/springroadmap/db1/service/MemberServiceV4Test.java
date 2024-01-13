@@ -2,7 +2,7 @@ package dev.kkkkkksssssaaaa.springroadmap.db1.service;
 
 import dev.kkkkkksssssaaaa.springroadmap.db1.domain.Member;
 import dev.kkkkkksssssaaaa.springroadmap.db1.repository.MemberRepository;
-import dev.kkkkkksssssaaaa.springroadmap.db1.repository.MemberRepositoryV4_2;
+import dev.kkkkkksssssaaaa.springroadmap.db1.repository.MemberRepositoryV5;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
@@ -108,7 +108,7 @@ class MemberServiceV4Test {
 
         @Bean
         MemberRepository repository() {
-            return new MemberRepositoryV4_2(dataSource);
+            return new MemberRepositoryV5(dataSource);
         }
 
         @Bean
